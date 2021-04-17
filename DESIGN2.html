@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neumorphism | CSS3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+   <link rel="stylesheet" type="text/css" href="STYLE2.css">
+	<style>
+		*{margin: 0; padding: 0;}		
+	</style>
+</head>
+<body>
+   	 <div class="block">
+   	 </div>
+   	 <div class="center">
+   	 	<div class="centerdiv">
+   	 		<div class="btn-u">
+   	 			<button class ="btn--round morph" ><i class="fas fa-user"></i></button>
+   	 		</div>
+   	 		<div class="btn-star1">
+   	 		    <button class ="btn--round morph" ><i class="fas fa-star"></i></button>
+   	 	    </div>
+   	 		<div class="btn--search">
+   	 			<a class =" btn--round morph"><i class="fas  fa-search"></i></a>
+   	 		</div>
+   	 		<div class="btn-r1-heart">
+   	 			<button class ="btn--round morph active" href="#"><i class="fas fa-heart"></i></button>
+   	 		</div>
+   	 		<div class="btn-sq-heart">
+   	 			<button class ="btn--square morph active" href="#"><i class="fas fa-heart"></i></button>
+   	 		</div>
+   	 		<div class="btn-r2-heart">
+   	 			<button class ="btn--round morph active" href="#"><i class="fas fa-heart"></i></button>
+   	 		</div>
+   	 		<div class="btn-sm-1">
+   	 			<button class ="btn morph">FOLLOW</button>
+   	 		</div>
+   	 		
+   	 		<div class ="search-box" >
+                <div class="s">
+                  <input class="btn morph active" type="text" placeholder="Type to Search...">
+                  <a href="#" class="searchBtn"><i class="fas fa-search"></i></a>
+                </div>
+   	 		</div>
+   	 		<div class ="input-box" >
+   	 			<input class="btn morph active" placeholder="PASSWORD">
+   	 		</div>
+   	 		<div class="btn-bookmrk">
+   	 			<button class ="btn--round morph" href="#"><i class="fas fa-bookmark"></i></button>
+   	 		</div> 
+   	 		<div class="btn-stop">  	 		
+   	 			<button class ="btn--round morph" href="#"><i class="fas fa-stop"></i></button>
+   	 		</div>
+   	 		<div class="btn-star2">
+   	 			<button class ="btn--round morph" href="#"><i class="fas fa-star"></i></button>
+   	 	    </div>
+   	 		<div class="btn-home">   	 		
+   	 			<button class ="btn--round morph" href="#"><i class="fas fa-home"></i></button>
+   	 		</div>
+            <div class="switch-o">
+            	<input type="checkbox"  class="ios-checkbox" id="switch-a" >
+            	<label for="switch-a"></label>
+            </div>
+            <div class="switch-a">
+            	<input type="checkbox"  class="ios-checkbox" id="switch-o" >
+            	<label for="switch-o"></label>
+            </div>
+            <div class="btn-2item">
+            	<a class="btn-dual morph">
+            		<i class="fas fa-comment">   </i>
+            		<i class="fas fa-user"></i>
+            	</a>
+            </div>
+            <div class="btn-nav">
+   	 			<button class ="btn--square morph" href="#"><i class="fas fa-bars"></i></button>
+   	 		</div>
+            <div class="btn-n-heart">
+               <button class ="btn--square morph" href="#"><i class="fas fa-heart n"></i></button>
+            </div>
+   	 		<div class="chart">
+   	 			<a class="chart--grid active">
+   	 				<div class="chart--item--inner"></div>
+   	 			</a>
+   	 		</div>
+            <div class="chart">
+              <ul class="chart--grid">
+                  <li class="container1 active">      
+                     <div class="box1">
+                        <input id="slider1" class="slider1" type="range" min="0" max="100" value="50">
+                        <div id="value1" class="value1"></div>
+                     </div>                     
+                  </li>
+                  <li class="container2  active">
+                     <div class="box2">
+                        <input id="slider2" class="slider2" type="range" min="0" max="100" value="50">
+                        <div id="value2" class="value2"></div>
+                     </div>
+                  </li>
+               </ul>          
+            </div>
+            <div class="container3">
+               <div class="box3">
+                  <input id="slider3" class="slider3" type="range" min="0" max="100" value="50">
+                  <div id="value3" class="value3"></div>
+               </div>
+            </div>
+            
+   	 	</div>
+   	</div>
+      <script>
+                 var slider = document.getElementById("slider3");
+                 var val = document.getElementById("value3");
+                 slider.oninput = function() 
+                                  {  var active = 250 * (this.value / 100);
+                                     val.style.width = active + 'px';
+                                  }
+            </script>      
+</body>
+</html>
