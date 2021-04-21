@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">	
+	</meta>
+	<title>BouncingBall</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		div{
+			height: 100vh; width: 100vw; 
+			box-sizing: border-box;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #2d3436;
+		}
+		div ul{ 
+			display: flex; 
+			border-bottom: 10px solid #fff;
+		 }
+		div ul li{
+			width: 50px; height: 50px;
+			border-radius: 100%;
+			list-style: none;
+			margin: 0 10px;
+			background-color: #8cc759;
+			animation: bouncy 1s linear infinite;
+		}
+		div ul li:nth-child(2){
+			background-color: #8c6daf;
+			animation-delay:0.6s;
+		}
+		div ul li:nth-child(3){
+			background-color: #ef5d74;
+			animation-delay: 0.4s;
+		}
+		div ul li:nth-child(4){
+			background-color: #f9a74b;
+			animation-delay: 0.8s;
+		}
+		div ul li:nth-child(5){
+			background-color: #60beeb;
+			animation-delay: 0.5s;
+		}
+		@keyframes bouncy{
+			0%{ transform:translateY(0) ; }
+			50%{ transform: translateY(-150px); }
+			100%{ transform: translateY(0); }
+		}
+	</style>
+</head>
+<body>
+   <div>
+   	   <ul>
+   	   	  <li></li>
+   	   	  <li></li>
+   	   	  <li></li>
+   	   	  <li></li>
+   	   	  <li></li>   	   	  
+   	   </ul>
+   </div>
+</body>
+</html>
