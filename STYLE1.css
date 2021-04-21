@@ -21,7 +21,7 @@
 	  	grid-template-rows: repeat(6, 1fr);
 	  	grid-template-areas:"log log log bt1 bt1 bt1 bt1 bt1 bt1 bti1 bti2 swio swio" "log log log bt2 bt2 bt2 bt2 bt2 bt2 btr1 btr2 swia swia" "bs1 bs1 bs1 bt3 bt3 bt3 bt3 bt3 bt3 char char char char" "bs2 bs2 bs2 bt4 bt4 bt4 bt4 bt4 bt4 char char char char" "sea sea sea sea sea sea sea sea sea char char char char" "sli sli sli sli sli sli sli sli sli sli sli sli sli"
 	   }
-	   /*@media only screen and (min-width: 600px){
+	   @media only screen and (min-width: 600px){
 	   	.grid{
 	  	grid-gap: 2.5rem;
 	  	min-width: 500px;
@@ -29,7 +29,7 @@
 	  	grid-template-rows: repeat(6, 1fr);
 	  	grid-template-columns: repeat(8, minmax(min-content, 1fr));
 	  	grid-template-areas:"log log bt1 bt1 bti1 bti2 swio" "log log bt2 bt2 btr1 btr2 swia" "bs1 bs1 bt3 bt3 bt3 char char char" "bs2 bs2 bt4 bt4 bt4 char char char" "sea sea sea sea sea char char char";
-	   }*/
+	   }
 	
 	   .grid > *{
 	   	display: flex;
