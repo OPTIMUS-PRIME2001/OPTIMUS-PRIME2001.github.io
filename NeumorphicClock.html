@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -9,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 html[data-theme='dark']{
   --bg: #131419;
@@ -50,6 +51,72 @@ html[data-theme='light'] {
 body {
   background-color: var(--bg);
 }
+/*Navbar Styling starts*/
+.navbar
+{ 
+  padding: 5px 20px 0px;
+  font-weight:bold;
+}
+.navbar-brand, .navbar-brand:hover
+{color: #fff;} 
+.nav-link 
+{color: #9a9da0;}
+.nav-link:hover
+{color: #fff;}
+
+.navbar-toggler span {
+   display: block;
+   background-color: #fff;
+   height: 3px;
+   width: 25px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   -webkit-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   position: relative;
+   right: 0;
+   opacity: 1;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+   -webkit-transition: transform .35s ease-in-out;
+   -moz-transition: transform .35s ease-in-out;
+   -o-transition: transform .35s ease-in-out;
+   transition: transform .35s ease-in-out;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    position: absolute;
+    right: 30px;
+    top: 23px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    opacity: 0.9;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    height: 20px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    position: absolute;
+    right: 30px;
+    top: 23px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    opacity: 0.9;
+}
+/* Navbar styling ends*/
+
 .heading{
   height: 60px;
   display: flex;
@@ -69,7 +136,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 75vh;
+	min-height: 65vh;
 }
 .clock{
 	width: 350px;
@@ -77,7 +144,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items:  center; 
-	background : url(images/clock.png); 
+	background : url(clock2.png); 
 	background-size: cover; 
 	border: 4px solid var(--bg);
 	border-radius: 50%;
@@ -194,9 +261,13 @@ input[type="checkbox"]:checked + .label .ball{
     <title>Neumorphism Clock with Dark and Light Mode</title>
  </head>
  <body>
-        <div class = "heading">
+ 
+ <header>
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">MY CLOCK</a>
+  <div class = "heading ml-auto">
  	        <span>
-              <input type="checkbox" id="checkbox" checked>
+              <input class="mr-sm-2" type="checkbox" id="checkbox" checked>
                 <label for="checkbox" class="label">                  
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
@@ -204,19 +275,75 @@ input[type="checkbox"]:checked + .label .ball{
                 </label>
             </span>
         </div>  
-    <div class= "main">      
- 	   <div class = "clock">
- 		    <div class = "hour">
- 			    <div class = "hr" id= "hr"></div>
- 		    </div>
- 		    <div class = "min">
- 			    <div class = "mn" id= "mn"></div>
- 		    </div>
- 		    <div class = "sec">
- 			     <div class = "sc" id= "sc"></div>
- 		    </div>
- 	    </div>
+</nav>
+<nav class="navbar navbar-expand">
+	<div class="mx-auto" id="navbarSupportedContent">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Alarm</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Clock<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Timer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Stopwatch</a>
+      </li>
+    </ul>
+   </div> 
+</nav>
+
+<div id="demo" class="carousel slide" data-interval="false">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class= "main" width="1100" height="500">      
+ 	        <div class = "clock">
+ 		        <div class = "hour">
+ 			        <div class = "hr" id= "hr"></div>
+ 		        </div>
+ 		        <div class = "min">
+ 			        <div class = "mn" id= "mn"></div>
+ 		        </div>
+ 		        <div class = "sec">
+ 			        <div class = "sc" id= "sc"></div>
+ 		        </div>
+ 	        </div>
+        </div>
+    <div class="carousel-caption">
+       
+    </div>   
     </div>
+    <div class="carousel-item">
+      <img src="images/homeslider2.jpg" alt="Chicago" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>Chicago</h3>
+        <p>Thank you, Chicago!</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="images/homeslider4.jpg" alt="New York" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>New York</h3>
+        <p>We love the Big Apple!</p>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+</header>      
  </body>
  </html>
  <script type= "text/javascript">
@@ -246,6 +373,8 @@ input[type="checkbox"]:checked + .label .ball{
     sc.style.transform = `rotateZ(${ss}deg)`;
     })
  </script>
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
