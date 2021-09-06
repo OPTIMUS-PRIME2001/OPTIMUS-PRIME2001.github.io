@@ -57,6 +57,9 @@ body {
   padding: 5px 20px 0px;
   font-weight:bold;
 }
+.sticky-top{
+  padding: 50px;
+}
 .navbar-brand, .navbar-brand:hover
 {color: #fff;} 
 .nav-link 
@@ -117,34 +120,20 @@ body {
 }
 /* Navbar styling ends*/
 
-.heading{
-  height: 60px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  position: relative;
-  padding: 0 1.5rem;
-}
-.heading span {
-  color: var(--color-text);
-  cursor: pointer;
-  font-size: 0.9375rem;
-  margin-left:25px;
-}
-
 .main{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 65vh;
+  height: 500px;
+	/*min-height: 65vh;*/
 }
 .clock{
 	width: 350px;
-	height:  350px;
+	height: 350px;
 	display: flex;
 	justify-content: center;
 	align-items:  center; 
-	background : url(images/clock2.png); 
+	background : url(images/clock.png); 
 	background-size: cover; 
 	border: 4px solid var(--bg);
 	border-radius: 50%;
@@ -160,9 +149,7 @@ body {
 	z-index: 10000;
 }
 
-.clock .hour,
-.clocl .min,
-.clock .sec{
+.clock .hour, .clocl .min, .clock .sec{
 	position: absolute;
 }
 .clock .hour, .hr{
@@ -210,6 +197,181 @@ body {
 	background: #008eff;
 	z-index: 12;
 	border-radius: 6px 6px 0 0;
+}
+.stopwatch{
+  width: 350px;  height:  350px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items:  center; 
+  position: relative;
+  top: -30px;
+  background-size: cover; 
+  border: 4px solid var(--bg);  
+  box-shadow: var(--color-inset-shadow);
+}
+.outer-circle{
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items:  center; 
+}
+.inner-circle{
+  width: 250px; height: 250px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  box-shadow: var(--color-equal-inset-shadow);
+  display: flex;
+  justify-content: center;
+  align-items:  center; 
+}
+.text {
+  color: var(--color-center);
+  font-size: 25px;
+}
+.minutes{ font-size: 47px; }
+.seconds{ font-size: 39px; }
+.milisec{ font-size: 27px; }
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  padding: 0;  
+  display: grid;
+  place-items:center;
+  position: relative ;
+  top: 30px; left: 7px;
+}
+.button-wrapper{  
+  position: absolute;
+  padding: 5rem;            
+  max-width: 400px;
+  min-width: 300px;
+  display: grid;
+  grid-gap: 3rem;
+  z-index: 1;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:"pause play lap"
+}
+.button-wrapper::after{
+    height: 3rem; width: 3rem;
+    top: 90%;
+    left: 1%;
+    background-color: #9586FF;
+    z-index: 100;
+    }
+.button-wrapper > *{
+    display: flex;
+    justify-content: center;
+    min-width: 3rem;
+    min-height: 3rem;
+    z-index: 1;
+}
+.button-wrapper > * > *{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.button-wrapper .btn-pause{
+    grid-area: pause;
+}
+.button-wrapper .btn-play{
+   grid-area: play;
+}
+.button-wrapper .btn-lap{
+   grid-area: lap;
+}
+.morph{
+    border: 3px solid transparent;
+    background: linear-gradient(160deg, #f0f1f4 0%, #e4e6eb 100%);
+    box-shadow: -3px -3px 6px 2px #ffffff, 5px 5px 8px 0px rgba(0,0,0,0.17), 1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    transition: 0.15s;
+}
+.morph.active, .morph:active, .morph:focus{
+    border: 3px solid #fafafa;
+    outline: none;
+    box-shadow: inset -3px -3px 5px 0px #ffffff, -1px -1px 4px 0px #ffffff, inset 5px 5px 10px rgba(0,0,0,0.12), inset 2px 2px 3px 0px rgba(0, 0, 0, 0.07), 1px 2px 3px 0px rgba(0,0,0,0.1);
+}
+.btn--round{
+    max-width: 5rem;
+    max-height: 5rem;
+    border-radius: 50%;
+}
+i{
+     font-size: 20px;
+ }
+.btn-play{
+    position: relative;
+}
+.btn-play i{
+     position:absolute;
+ }
+ .btn-play i.fa-pause{
+     visibility: hidden;
+ }
+ .btn-play.success i.fa-play{  visibility: visible; }
+ .btn-play.error i.fa-pause{  visibility: visible; }
+ .btn-play.error i.fa-play{  visibility: hidden; }
+.lap-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  height: 10rem;
+  padding: 0;
+ 
+}
+.laps{
+   height: 2500px ;
+   overflow: auto;
+   list-style: none;
+   color: var(--color-center);
+   padding:  30px 0;
+   place-items: center;
+   position: relative;
+}
+.laps::-webkit-scrollbar {
+     display: none;
+}
+.lap-item{
+  display: inline-block;
+  flex-direction: column;
+  width: 250px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid var(--color-center);
+  border-radius: 50px;
+  text-align: center;
+}
+.hidden{
+  visibility: hidden;
+}
+.number{
+   color: #cccccc;
+}
+.timestamp{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.heading{
+  height: 50px;
+  display: flex;  
+  align-items: center;
+  position: relative;
+  padding: 0 1.5rem;
+}
+.heading span {
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 0.9375rem;
+  margin-left:20px;
 }
 
 input[type="checkbox"]{
@@ -263,8 +425,8 @@ input[type="checkbox"]:checked + .label .ball{
  <body>
  
  <header>
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">MY CLOCK</a>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand " href="#">MY CLOCK</a>
   <div class = "heading ml-auto">
  	        <span>
               <input class="mr-sm-2" type="checkbox" id="checkbox" checked>
@@ -276,13 +438,13 @@ input[type="checkbox"]:checked + .label .ball{
             </span>
         </div>  
 </nav>
-<nav class="navbar navbar-expand">
+<nav class="navbar navbar-expand sticky-top">
 	<div class="mx-auto" id="navbarSupportedContent">
     <ul class="navbar-nav ">
       <li class="nav-item">
         <a class="nav-link" href="#">Alarm</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link active" href="#">Clock<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -303,7 +465,7 @@ input[type="checkbox"]:checked + .label .ball{
   </ul>
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <div class= "main" width="1100" height="500">      
+        <div class= "main" width="1100" height="450">      
  	        <div class = "clock">
  		        <div class = "hour">
  			        <div class = "hr" id= "hr"></div>
@@ -321,23 +483,46 @@ input[type="checkbox"]:checked + .label .ball{
     </div>   
     </div>
     <div class="carousel-item">
-      <div class= "main" width="1100" height="500">      
-           <div class = "clock">
-	   </div>
-      </div>	      
+      <div class= "main" width="1100" height="450">      
+          <div class = "clock">
+          </div>
+      </div>      
       <div class="carousel-caption">
       </div>   
     </div>
-    <div class="carousel-item">
-      <div class= "main" width="1100" height="500">      
-           <div class = "clock">
-	   </div>
-      </div>	      
-      <div class="carousel-caption">
-        
-      </div>   
+    <!-- 3rd Carousel-->
+    <div class="carousel-item ">
+     <div class="main" width="1100" height="450"> 
+            
+          <div class = "stopwatch">
+            <div class = "outer-circle">
+              <div class = "inner-circle">   
+                  <span class="text minutes">0 :</span>
+                  <span class="text seconds">&nbsp;0 :</span>
+                  <span class="text centisec">&nbsp;0</span>       
+              </div>              
+            </div>
+          </div>
+      </div>
+      <div class="container">  
+          <div class = "button-wrapper">
+              <div class="btn-reset hidden">
+                  <a class =" btn--round morph "><i class="fa fa-repeat"></i></a>
+              </div>
+              <div class="btn-play">
+                  <button class ="btn--round morph" >
+                    <i class="fa fa-play"></i>
+                    <i class="fa  fa-pause"></i>
+                  </button>
+              </div>
+              <div class="btn-lap hidden">
+                  <a class =" btn--round morph">Lap</a>
+              </div>    
+           </div>
+      <div class="carousel-caption">      </div>   
     </div>
-  </div>
+   </div> 
+<!-- 3rd Carousel ends here-->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
@@ -346,10 +531,60 @@ input[type="checkbox"]:checked + .label .ball{
   </a>
 </div>
 
-</header>      
+</header> 
+   <div class="lap-block">
+      <ul class = "laps">
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li><br>
+           <li class = "lap-item">
+              <span class = "number">#1</span>
+              <span class = "time-stamp">01 : 43 : 07</span>             
+           </li>
+        </ul>           
+   </div>  
+   <h3>hii</h3>   
  </body>
+ <footer>
+   
+ </footer>
  </html>
  <script type= "text/javascript">
+   
+    //............theme toggler script below................// 
  	let checkbox = document.getElementById('checkbox');
     checkbox.addEventListener('change', function(){
         if(this.checked){
@@ -359,6 +594,8 @@ input[type="checkbox"]:checked + .label .ball{
             document.documentElement.setAttribute('data-theme', 'light');
        }
     });
+
+    //............clock script below................// 
     const deg = 6;
     const hr = document.querySelector('#hr');
     const mn = document.querySelector('#mn');
@@ -375,6 +612,72 @@ input[type="checkbox"]:checked + .label .ball{
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
     })
+   
+    //............stopwatch script below................// 
+    const resetButton = document.getElementsByClassName('btn-reset')[0];
+    const playButton = document.getElementsByClassName('btn-play')[0];
+    const lapButton = document.getElementsByClassName('btn-lap')[0];
+    const minutes = document.getElementsByClassName('minutes')[0];
+    const second = document.getElementsByClassName('seconds')[0];
+    const centisecond = document.getElementsByClassName('centisec')[0];
+    
+    let isPlay = false;
+    let isreset = false;
+    let minCounter=0;
+    let min;
+    let secCounter=0;
+    let sec;
+    let centisecCounter=0;
+    let centisec;
+
+    const togglebutton = ()=>{
+      lapButton.classList.remove("hidden")
+      resetButton.classList.remove("hidden")
+    }
+    const play = () =>{
+      if(!isPlay && !isreset)
+      {   
+          playButton.classList.remove("success");
+          playButton.classList.add("error");
+          min = setInterval(() => {
+                minutes.innerHTML = `${++minCounter} :`;
+                },60*1000);
+          sec = setInterval(() => {
+                if(secCounter === 60)
+                { secCounter=0; }  
+                second.innerHTML = `&nbsp;${++secCounter} :`;
+                },1000);
+          centisec = setInterval(() => {
+                if(centisecCounter === 100)
+                { centisecCounter=0; }    
+                centisecond.innerHTML = `&nbsp;${++centisecCounter}`;
+                },10);        
+          isPlay = true; 
+          isreset = true;
+      }
+      else
+      {
+         playButton.classList.remove("error");
+         playButton.classList.add("success");
+         clearInterval(min);
+         clearInterval(sec);
+         clearInterval(centisec);         
+         isPlay = false; 
+         isreset = false;
+      }  
+      togglebutton();
+    }    
+    const reset = () =>{
+      isreset = true;
+      play();      
+      lapButton.classList.add("hidden");
+      resetButton.classList.add("hidden");
+      minutes.innerHTML = '00 :'
+      second.innerHTML = ' 00 :';
+      centisecond.innerHTML = ' 00'; 
+    }
+    playButton.addEventListener("click",play);
+    resetButton.addEventListener("click",reset);
  </script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
