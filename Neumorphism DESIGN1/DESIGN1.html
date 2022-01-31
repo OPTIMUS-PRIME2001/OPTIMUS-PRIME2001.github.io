@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neumorphism|HTML5 CSS3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="STYLE1.css">
+	<style>
+	  *{  margin:0;   padding: 0;  }
+	</style>
+</head>
+<body>
+   <div class="grid">
+   	    <div class="logo">
+   	    	<div class="btn--square morph">AI</div>
+   	    </div>
+
+   	    <div class="btn-off">
+   	    	<button class="btn morph">Button</button>
+   	    </div>
+
+   	    <div class="btn-act">
+   	    	<button class="btn morph active">Pressed</button>
+   	    </div>
+   	    
+   	    <div class="btn-drop">
+   	    	<button class="btn morph">Dropdown
+   	    		<i class="fas fa-chevron-down"></i>
+   	    	</button>
+   	    </div>
+
+   	    <div class="btn-user">
+   	    	<button class="btn morph">
+   	    	   <i class="fas fa-user-plus"></i>Add User	
+   	    	</button>
+   	    </div>
+
+   	    <div class="btn-i-1">
+   	    	<button class="btn--icon morph">
+   	    		<i class="fas fa-arrow-left"></i>
+   	    	</button>
+   	    </div>
+   	    <div class="btn-i-2">
+   	    	<button class="btn--icon morph">
+   	    		<i class="fas fa-arrow-right"></i>
+   	    	</button>
+   	    </div>
+
+   	    <div class="btn-r-1">
+   	    	<div class="btn--icon btn--icon--rounded morph">
+   	    		<i class="far fa-circle"></i>
+   	    	</div>
+   	    </div>
+        <div class="btn-r-2">
+   	    	<div class="btn--icon btn--icon--rounded morph active">
+   	    		<i class="far fa-dot-circle-o"></i>
+   	    	</div>
+   	    </div>
+
+       <div class="switch-o">
+            <input type="checkbox"  class="ios-checkbox" id="switch-a" >
+            <label for="switch-a"></label>
+        </div>
+        <div class="switch-a">
+            <input type="checkbox"  class="ios-checkbox" id="switch-o" >
+            <label for="switch-o"></label>
+        </div>
+        
+        <div class="btn-sm-1">
+   	    	<div class="btn btn--sm morph">Share
+   	    		<i class="fas fa-share-alt"></i>
+   	    	</div>
+   	    </div>
+
+   	    <div class="btn-sm-2">
+   	    	<div class="btn btn--sm morph">Location
+   	    		<i class="fas fa-map-marker-alt"></i>
+   	    	</div>
+   	    </div>
+        
+        <div class="search">
+        	<div class="s">
+        		<input class="btn--srch morph active" type="text" placeholder="Type to Search...">
+                <a class="searchBtn"><i class="fas fa-search"></i></a>
+            </div>        	
+        </div>    
+        <div class="gap">
+        	
+        </div>
+        <div class="chart">
+   	 		<ul class="chart--grid">
+   	 			<li class="chart--item chart--item--1 morph active">
+   	 				<div class="chart--item--inner"></div>
+   	 			</li>
+   	 			<li class="chart--item chart--item--2 morph active">
+   	 				<div class="chart--item--inner"></div>
+   	 			</li>
+   	 			<li class="chart--item chart--item--3 morph active">
+   	 				<div class="chart--item--inner"></div>
+   	 			</li>
+   	 			<li class="chart--item chart--item--4 morph active">
+   	 				<div class="chart--item--inner"></div>
+   	 			</li>
+   	 			<li class="chart--item chart--item--5 morph active">
+   	 				<div class="chart--item--inner"></div>
+   	 			</li>
+   	 		</ul>   	 		
+   	 	</div>
+      <div id="container">
+               <div class="box">
+                  <input id="slider" class="slider" type="range" min="0" max="100" value="50">
+                  <div id="value" class="value"></div>
+               </div>
+            </div>
+   </div>
+   <script>
+      var slider = document.getElementById("slider");
+      var val = document.getElementById("value");
+      slider.oninput = function() 
+                      {  var active = 627 * (this.value / 100);
+                         val.style.width = active + 'px';
+                      }
+   </script>
+</body>
+</html>

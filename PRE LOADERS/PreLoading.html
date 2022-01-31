@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">  
+    </meta>
+	<title>PreLoader</title>
+	<style>
+		*{
+			margin: 0; padding: 0;
+		}
+		html{
+			font-size: 62.5%;
+		}
+        
+        .preloader {
+            position: fixed;            
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100vw; height: 100vh;
+            background: #ecf0f3;
+            display: none;
+        }
+ 
+        .loader {
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            transform: rotate(165deg);
+        }
+        .loader {
+            position: absolute;
+            top: calc(50% - 2.5rem);
+            left: calc(50% - 2.5rem);
+       }
+       .loader::before, .loader::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 0.5rem;
+            transform: translate(-50%, -50%);
+        }
+        .loader::before {
+            animation: before 2s infinite;
+        }
+        .loader::after {
+            animation: after 2s infinite;
+        }
+        @keyframes before {
+        0% {
+            width: 2rem;
+            box-shadow: 2rem -1rem rgba(225, 20, 98, 0.75), -2rem 1rem rgba(111, 202, 220, 0.75);
+            }
+        35% {
+            width: 5rem;
+            box-shadow: 0 -1rem rgba(225, 20, 98, 0.75), 0 1rem rgba(111, 202, 220, 0.75);
+            }
+        70% {
+            width: 2rem;
+            box-shadow: -2em -1rem rgba(225, 20, 98, 0.75), 2em 1em rgba(111, 202, 220, 0.75);
+            }
+        100% {
+            box-shadow: 2em -1rem rgba(225, 20, 98, 0.75), -2em 1em rgba(111, 202, 220, 0.75);
+             }
+        }
+        @keyframes after {
+         0% {
+            height: 2rem;
+            box-shadow: 1rem 2rem rgba(61, 184, 143, 0.75), -1rem -2rem rgba(233, 169, 32, 0.75);
+            }
+        35% {
+        height: 5rem;
+        box-shadow: 1rem 0 rgba(61, 184, 143, 0.75), -1rem 0 rgba(233, 169, 32, 0.75);
+            }
+        70% {
+            height: 2rem;
+            box-shadow: 1rem -2rem rgba(61, 184, 143, 0.75), -1rem 2rem rgba(233, 169, 32, 0.75);
+           }
+        100% {
+             box-shadow: 1rem 2rem rgba(61, 184, 143, 0.75), -1rem -2rem rgba(233, 169, 32, 0.75);
+            }
+        }
+
+	</style>
+</head>
+<body>
+    <div class="Preloader">
+   	    <div class="loader"></div>
+    </div>  
+</body>
+</html>
