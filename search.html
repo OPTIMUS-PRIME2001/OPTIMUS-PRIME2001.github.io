@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+    	* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+        html{
+              font-size: 62.5%;
+            }
+        body{
+             min-height: 100vh;
+             background-color: #273c75;
+             display: flex;  
+             justify-content: center;
+             align-items: center;                   
+            }
+    	a, a:hover{
+              text-decoration: none;            
+          }  
+          .searchBox{
+               position: relative;
+               display: flex;
+               align-items: center;
+               justify-content: center;               
+          }
+          .searchText{
+            width: 0rem;
+            border-radius: 5rem;
+            outline: none;
+            border: none;
+            transition: all 0.3s linear;
+          }
+          .searchText:focus{
+            outline: none;
+          }
+          .searchBtn{
+            width: 5rem;
+            height: 5rem;
+            background-color: #192a56;
+            color: #fff;
+            position: absolute;
+            right: 1rem;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+          }
+          .searchBox:hover > .searchText{
+           width: 25rem;
+           padding: 2rem;
+           box-shadow: 0 2rem 2rem -1.5rem rgba(0,0,0,0.5);
+          }
+          .searchBox:hover>.searchBtn{
+            background: #fff;
+            color: #4169e1;
+          } 
+    </style>
+</head>
+<body>
+    <div class="searchBox">
+      <input type="text" class="searchText" placeholder="Type to Search...">
+      <a href="#" class="searchBtn">
+        <i class="fas fa-3x fa-search"></i>
+      </a>
+    </div>
+</body>
+</html>
