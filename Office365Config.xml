@@ -1,0 +1,26 @@
+<Configuration ID="c03c7234-c794-4362-aa92-f74fe4f07d78">
+  <Add OfficeClientEdition="64" Channel="CurrentPreview" MigrateArch="TRUE">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-gb" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="Bing" />
+    </Product>
+    <Product ID="LanguagePack">
+      <Language ID="en-gb" />
+      <ExcludeApp ID="Bing" />
+    </Product>
+    <Product ID="ProofingTools">
+      <Language ID="bn-in" />
+      <Language ID="en-gb" />
+      <Language ID="en-us" />
+      <Language ID="el-gr" />
+      <Language ID="hi-in" />
+      <Language ID="ru-ru" />
+    </Product>
+  </Add>
+  <Updates Enabled="TRUE" />
+  <RemoveMSI />
+  <Display Level="Full" AcceptEULA="TRUE" />
+</Configuration>
